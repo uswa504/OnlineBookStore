@@ -1,0 +1,98 @@
+<html>
+<head>
+  <script>
+function validate(){
+ var email = document.user.email.value;
+ var uname = document.user.uname.value;
+ var password = document.user.password.value;
+ var confirm_password= document.user.confirm_password.value;
+ var address= document.user.confirm_password.value;
+ var city= document.user.city.value;
+ var phone= document.user.phone.value;
+ if (email==null || email==""){
+  alert("Email can't be blank");
+  return false;
+ }
+ else if (uname==null || uname==""){
+   alert("Username can't be blank");
+   return false;
+ }
+ else if(password.length<6){
+  alert("Password must be at least 6 characters long.");
+  return false;
+ }
+ else if (password!=confirm_password){
+  alert("Confirm Password should match with the Password");
+  return false;
+ }
+ else if (!document.user.user_type[0].checked && !document.user.user_type[1].checked){
+		alert("Please choose user_type");
+		return false;
+ }
+ else if (address==null || address==""){
+  alert("Kindly provide your address");
+  return false;
+ }
+ else if (city==null || city==""){
+  alert("Kindly provide your city");
+  return false;
+ }
+ else if (phone==null || phone==""){
+  alert("Kindly provide your phone");
+  return false;
+ }
+}
+</script>
+</head>
+<body>
+    <div  style="color:beige;font:700 30pt arial;background-color:green;text-align:center ">Online Book Store </div>
+  	<form name="user" method="post" action="Insert" onsubmit="return validate()">
+  	<table>
+  	<tr><p><b><u>Sign Up</u></b></p></tr>
+    <tr>
+      <td  align="right">Email:</td>
+      <td ><input typ="text" name="email" ></td>
+    </tr>
+  	  <tr>
+  	      <td  align="right">Username:</td>
+  	      <td ><input type="text" name="uname"></td>
+        </tr>
+  	  <tr>
+  	    <td  align="right">Password:</td>
+  	    <td ><input type="password" name="password" ></td>
+  	  </tr>
+
+  	   <tr>
+  	     <td  align="right">Confirm password:</td>
+  	     <td ><input type="password" name="confirm_password"></td>
+  	   </tr>
+       <tr>
+	     <td  align="right"> Who are you!</td>
+	     <td ><input type="radio" name="user_type" value="admin"> Admin </td>
+	   </tr>
+     <tr>
+	     <td  align="right"></td>
+	     <td ><input type="radio" name="user_type" value="customer"> Customer</td>
+	   </tr>
+  	   <tr>
+  	     <td  align="right">Addresss:</td>
+  	     <td ><input type="text" name="address"></td>
+  	   </tr>
+
+
+  	   <tr>
+  	     <td  align="right">City:</td>
+  	     <td ><input type="text" name=city ></td>
+  	   </tr>
+  	   <tr>
+  	     <td  align="right">Telephone:</td>
+  	     <td ><input type="text" name="phone"  onKeyPress="return letternumber(event)"></td>
+  	   </tr>
+  	   <tr>
+  	     <td ></td>
+  	     <td ><input type="submit" value='Signup'></td>
+  	   </tr>
+    	</table>
+      </form>
+  </body>
+</html>
